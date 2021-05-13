@@ -1,3 +1,5 @@
+# leete no. 125
+
 class Solution:
     def isPalindrome(self, s: str) -> bool:
         # 공백, 특수문자를 trim한 list 생성
