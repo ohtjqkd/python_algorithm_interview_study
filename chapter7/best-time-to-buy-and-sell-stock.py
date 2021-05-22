@@ -33,7 +33,7 @@ def second(prices): # 단 방향으로 해도 됨
             max_dp[-(i+1)] = max_dp[-i]
     return max([m-prices[i] for i, m in enumerate(max_dp)])
 
-def third(prices): # 가장 빠름
+def third(prices): # 가장 빠름 더 빠른 코드를 확인해보자
     answer = 0
     min_v = prices[0]
     for i in range(1, len(prices)):
