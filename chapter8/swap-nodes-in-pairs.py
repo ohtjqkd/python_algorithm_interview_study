@@ -9,26 +9,14 @@ class Solution:
         if head == None:
             return head
         idx = 0
-        prv, nxt = None, None
+        prv = None
+        #value를 바꿔주자
         while node:
-            print(idx, node.val, node.next.val)
             if idx % 2 == 0:
-                #홀수번째
                 prv = node
-                nxt = node.next
-                if not node.next.next.next:
-                    if not node.next.next:
-                        node.next = None
-                    else:
-                        node.next = node.next.next
-                else:
-                    node.next = node.next.next.next
-                node = nxt
             else:
-                #짝수번째
-                nxt = node.next
-                node.next = prv
-                node = nxt
+                node.val, prv.val = prv.val, node.val
+            node = node.next
             idx += 1
         return ret
 
@@ -39,7 +27,7 @@ def printLN(head):
         printLN(head.next)
 
 arr = []
-arr = [1, 2, 3, 4]
+arr = [1, 2, 3, 4, 5, 6]
 
 head = ListNode(arr[0])
 node = head
